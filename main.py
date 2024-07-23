@@ -24,11 +24,11 @@ def retrieve():
         try:
             with open("data/grades.json", 'r') as file:
                 grades_data = json.load(file)
-            return Response(jsonify(grades_data), status=200)
+            return jsonify(grades_data), 200
         except FileNotFoundError:
-            return Response(jsonify({'error': 'File not found'}), status=404)
+            return jsonify({'error': 'File not found'}), 404
         except json.JSONDecodeError:
-            return Response(jsonify({'error': 'Error decoding JSON'}), status=500)
+            return jsonify({'error': 'Error decoding JSON'}), 500
     return Response("Invalid API key", status=401)
 
 
