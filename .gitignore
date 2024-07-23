@@ -1,0 +1,14 @@
+bin
+include
+lib
+lib64
+pyvenv.cfg
+
+logs
+log
+*.log
+*.logs
+__pycache__
+test.*
+grades.json
+data
